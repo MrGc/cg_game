@@ -13,8 +13,8 @@ import org.slf4j.LoggerFactory;
  * @Date 2022/10/15 22:12
  * @Version 1.0
  */
-public abstract class BashServer {
-    private static final Logger logger = LoggerFactory.getLogger(BashServer.class);
+public abstract class BaseServer {
+    private static final Logger logger = LoggerFactory.getLogger(BaseServer.class);
     protected static String configPath;
     /** 服务器类型 */
     protected int serverType;

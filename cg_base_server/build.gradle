@@ -14,8 +14,6 @@ repositories {
 }
 
 dependencies {
-    implementation fileTree(dir: '../cg_util/build/libs', include: 'cg_util-1.0-SNAPSHOT.jar')
-
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     // https://mvnrepository.com/artifact/org.mockito/mockito-core
@@ -50,6 +48,7 @@ dependencies {
     implementation 'io.protostuff:protostuff-core:1.8.0'
     implementation 'io.protostuff:protostuff-runtime:1.8.0'
 
+    implementation fileTree(dir: '../cg_util/build/libs', include: 'cg_util-1.0-SNAPSHOT.jar')
 
 
 }
