@@ -6,9 +6,9 @@
       <GradleProjectSettings>
         <option name="delegatedBuild" value="false" />
         <option name="testRunner" value="PLATFORM" />
-        <option name="distributionType" value="LOCAL" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/cg_base_server" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../gradle-7.5.1" />
+        <option name="gradleHome" value="D:/gradle-6.8.3" />
         <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
           <set>
@@ -21,6 +21,7 @@
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/cg_common" />
+        <option name="gradleHome" value="D:/gradle-6.8.3" />
         <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
           <set>
@@ -33,6 +34,7 @@
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/cg_cross_server" />
+        <option name="gradleHome" value="D:/gradle-6.8.3" />
         <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
           <set>
@@ -45,6 +47,7 @@
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/cg_game_server" />
+        <option name="gradleHome" value="D:/gradle-6.8.3" />
         <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
           <set>
@@ -57,6 +60,7 @@
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/cg_login_server" />
+        <option name="gradleHome" value="D:/gradle-6.8.3" />
         <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
           <set>
@@ -69,6 +73,7 @@
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/cg_protocal" />
+        <option name="gradleHome" value="D:/gradle-6.8.3" />
         <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
           <set>
@@ -81,6 +86,7 @@
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/cg_rpc_akka" />
+        <option name="gradleHome" value="D:/gradle-6.8.3" />
         <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
           <set>
@@ -91,9 +97,9 @@
       <GradleProjectSettings>
         <option name="delegatedBuild" value="false" />
         <option name="testRunner" value="PLATFORM" />
-        <option name="distributionType" value="WRAPPED" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/cg_util" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../gradle-7.5.1" />
+        <option name="gradleHome" value="D:/gradle-6.8.3" />
         <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
           <set>

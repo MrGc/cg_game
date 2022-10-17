@@ -1,0 +1,13 @@
+# Gradle
+/.gradle/
+/*/.gradle/
+/build/
+/*/build/
+
+# Intellij IDEA
+/.idea/
+/*/out/
+
+*.iml
+*.lock
+
