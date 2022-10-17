@@ -18,6 +18,6 @@ public class GameServer extends BaseServer{
     }
     public static void main(String[] args) {
         instance.start(1,1);
-        instance.initComponent(true, "");
+        instance.initComponent(true, "加载json");
     }
 }

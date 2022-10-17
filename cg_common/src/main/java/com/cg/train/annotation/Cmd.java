@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface Cmd {
     /** 协议号 */
-    int cmd();
+    String cmd();
     /** 是否需要登录 */
     boolean needLogin();
 }

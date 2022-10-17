@@ -16,6 +16,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.projectlombok:lombok:1.18.24'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     // https://mvnrepository.com/artifact/org.mockito/mockito-core
@@ -49,6 +50,7 @@ dependencies {
     implementation 'com.typesafe.akka:akka-http_2.13:10.2.10'
     implementation 'io.protostuff:protostuff-core:1.8.0'
     implementation 'io.protostuff:protostuff-runtime:1.8.0'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
 
 
 

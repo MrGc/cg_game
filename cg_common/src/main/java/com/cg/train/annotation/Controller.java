@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-public @interface Component {
+public @interface Controller {
     /** 功能id，用于功能开启判断，功能未开启直接拦截协议 */
     int functionId();
 
