@@ -3,10 +3,13 @@ package com.cg.train.dispatcher;
 import com.cg.train.annotation.Cmd;
 import com.cg.train.annotation.Controller;
 import com.cg.train.annotation.JsonBean;
+import com.cg.train.util.FileUtil;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -22,7 +25,7 @@ import java.util.Set;
 public class Dispatcher {
     private static final Dispatcher instance = new Dispatcher();
     private Dispatcher() {}
-    public static final Dispatcher getInstance() {
+    public static Dispatcher getInstance() {
         return instance;
     }
 
@@ -49,7 +52,7 @@ public class Dispatcher {
      * @param basePackage
      */
     public synchronized void load(String basePackage) {
-        Set<Class<?>> classes = new HashSet<>();
+        Set<Class<?>> classes = FileUtil.getClasses(basePackage);
         commanders.clear();
         classes.forEach(cls -> {
             //扫描到controller层，协议入口都是在controller类下面
@@ -70,7 +73,15 @@ public class Dispatcher {
             if (cls.isAnnotationPresent(JsonBean.class)) {
                 try {
                     JsonBean jsonBean = cls.getAnnotation(JsonBean.class);
-                    String s = jsonBean.jsonPath();
+                    String path = jsonBean.jsonPath();
+                    URL jsonUrl = Dispatcher.class.getResource("data/" + path);
+                    if (jsonUrl == null) {
+                        log.error("json不存在：" + path);
+                        return;
+                    }
+
+                    File file = new File(jsonUrl.getFile());
+
 
                     Object o = cls.getDeclaredConstructor().newInstance();
                 } catch (Exception e) {

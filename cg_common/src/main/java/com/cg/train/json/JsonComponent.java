@@ -1,5 +1,7 @@
 package com.cg.train.json;
 
+import com.cg.train.util.JsonUtil;
+
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -17,6 +19,6 @@ public class JsonComponent {
     private static final Map<Class<? extends BaseJson>, Map<Integer, Map<Integer, BaseJson>>> towKeyMap = new ConcurrentHashMap<>(10);
 
     public void reload() {
-
+//        JsonUtil
     }
 }
