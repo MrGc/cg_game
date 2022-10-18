@@ -1,7 +1,8 @@
 package com.cg.train.util;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ClassUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @ClassName ClassUtil
@@ -10,8 +11,8 @@ import org.apache.commons.lang3.ClassUtils;
  * @Date 2022/10/17 23:36
  * @Version 1.0
  */
-@Slf4j
 public class ClassUtil {
+    private static final Logger log = LoggerFactory.getLogger(ClassUtil.class);
     /**
      * 创建一个对象
      * @param className

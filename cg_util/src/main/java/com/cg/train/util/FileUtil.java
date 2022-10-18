@@ -1,6 +1,7 @@
 package com.cg.train.util;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -22,8 +23,8 @@ import java.util.jar.JarFile;
  * @Date 2022/10/17 23:36
  * @Version 1.0
  */
-@Slf4j
 public class FileUtil {
+    private static final Logger log = LoggerFactory.getLogger(FileUtil.class);
     /**
      * 从包package中获取所有的Class
      *

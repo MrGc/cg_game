@@ -2,7 +2,8 @@ package com.cg.train.dispatcher;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @Description: 协议封装解析器
@@ -10,8 +11,8 @@ import lombok.extern.slf4j.Slf4j;
  * @Date: 2022/10/17 17:42
  * @Version: 1.0.0
  */
-@Slf4j
 public class PackCodec {
+    public static final Logger log = LoggerFactory.getLogger(PackCodec.class);
     /** 协议头的长度 */
     public static final int HEAD_LEN = 12;
 

@@ -1,16 +1,13 @@
 package com.cg.train.util;
 
-import com.alibaba.fastjson2.JSON;
-import com.alibaba.fastjson2.JSONArray;
 import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.JSONReader;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.net.URL;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,8 +18,8 @@ import java.util.List;
  * @Date 2022/10/17 23:21
  * @Version 1.0
  */
-@Slf4j
 public class JsonUtil {
+    public static final Logger log = LoggerFactory.getLogger(JsonUtil.class);
     public static <T> List<T> fileBuildToJson(String path, Class<T> classes) {
         List<T> jsonList = new ArrayList<>();
         URL resource = JsonUtil.class.getResource(path);

@@ -3,15 +3,14 @@ package com.cg.train.dispatcher;
 import com.cg.train.annotation.Cmd;
 import com.cg.train.annotation.Controller;
 import com.cg.train.annotation.JsonBean;
+import com.cg.train.util.ClassUtil;
 import com.cg.train.util.FileUtil;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.net.URL;
+import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -21,8 +20,8 @@ import java.util.Set;
  * @Date: 2022/10/17 16:04
  * @Version: 1.0.0
  */
-@Slf4j
 public class Dispatcher {
+    public static final Logger log = LoggerFactory.getLogger(Dispatcher.class);
     private static final Dispatcher instance = new Dispatcher();
     private Dispatcher() {}
     public static Dispatcher getInstance() {
@@ -30,6 +29,8 @@ public class Dispatcher {
     }
 
     private final Map<String, Commander> commanders = new HashMap<>();
+    //todo craig
+//    private final Map<String,>
 
     public Pack invoke(long playerId, int componentId, int cmdId, String data) throws Exception {
         //todo craig
@@ -73,17 +74,11 @@ public class Dispatcher {
             if (cls.isAnnotationPresent(JsonBean.class)) {
                 try {
                     JsonBean jsonBean = cls.getAnnotation(JsonBean.class);
-                    String path = jsonBean.jsonPath();
-                    URL jsonUrl = Dispatcher.class.getResource("data/" + path);
-                    if (jsonUrl == null) {
-                        log.error("json不存在：" + path);
-                        return;
+                    if (Arrays.stream(cls.getInterfaces()).anyMatch(p -> p == IReload.class)) {
+                        IReload reloadClass = (IReload) ClassUtil.createObject(cls.getName());
+                        reloadClass.reload();
                     }
 
-                    File file = new File(jsonUrl.getFile());
-
-
-                    Object o = cls.getDeclaredConstructor().newInstance();
                 } catch (Exception e) {
                     log.error("json[" + cls + "]加载出错！！！", e);
                 }
