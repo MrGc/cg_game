@@ -6,12 +6,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @Description: dao注解
+ * @Description: DAO注解
  * @Author: Craig
- * @Date: 2022/10/17 15:58
+ * @Date: 2022/10/17 14:17
  * @Version: 1.0.0
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface Dao {
+
 }

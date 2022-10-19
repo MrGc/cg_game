@@ -1,6 +1,8 @@
 package com.cg.train;
 
-import lombok.extern.slf4j.Slf4j;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @ClassName GameServer
@@ -9,8 +11,8 @@ import lombok.extern.slf4j.Slf4j;
  * @Date 2022/10/17 00:07
  * @Version 1.0
  */
-@Slf4j
 public class GameServer extends BaseServer{
+    public static final Logger log = LoggerFactory.getLogger(GameServer.class);
     private static final GameServer instance = new GameServer();
     private GameServer() {}
     public static GameServer getInstance() {
@@ -18,6 +20,6 @@ public class GameServer extends BaseServer{
     }
     public static void main(String[] args) {
         instance.start(1,1);
-        instance.initComponent(true, "加载json");
+//        instance.initComponent(Dispatcher, "加载json");
     }
 }

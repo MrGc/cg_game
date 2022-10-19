@@ -6,13 +6,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @Description: 处理类注解
+ * @Description: 自动装配注解
  * @Author: Craig
  * @Date: 2022/10/17 14:17
  * @Version: 1.0.0
  */
+@Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
-public @interface Service {
-
+public @interface Autowired {
 }
