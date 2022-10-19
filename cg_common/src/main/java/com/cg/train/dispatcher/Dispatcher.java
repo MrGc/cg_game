@@ -22,14 +22,14 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class Dispatcher {
     public static final Logger log = LoggerFactory.getLogger(Dispatcher.class);
-    private static final Dispatcher instance = new Dispatcher();
+    private static final Dispatcher INSTANCE = new Dispatcher();
     private Dispatcher() {}
     public static Dispatcher getInstance() {
-        return instance;
+        return INSTANCE;
     }
 
     private final Map<String, Commander> commanders = new HashMap<>();
-    //游戏对象 key-注解的对象类名, value-object
+    /** 游戏对象 key-注解的对象类名, value-object */
     private final Map<String, Object> gameBean = new ConcurrentHashMap<>();
 
     public Pack invoke(long playerId, int componentId, int cmdId, String data) throws Exception {
