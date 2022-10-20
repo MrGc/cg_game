@@ -1,2 +1,5 @@
 rootProject.name = 'cg_common'
 
+include 'cg_util'
+project(':cg_util').projectDir = file('../cg_util')
+

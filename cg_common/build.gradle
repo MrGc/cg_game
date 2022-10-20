@@ -48,7 +48,8 @@ dependencies {
     implementation 'io.protostuff:protostuff-core:1.8.0'
     implementation 'io.protostuff:protostuff-runtime:1.8.0'
 
-    implementation fileTree(dir: '../cg_util/build/libs', include: 'cg_util-1.0-SNAPSHOT.jar')
+    implementation project(':cg_util')
+//    implementation fileTree(dir: '../cg_util/build/libs', include: 'cg_util-1.0-SNAPSHOT.jar')
 
 
 }

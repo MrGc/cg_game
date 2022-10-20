@@ -3,6 +3,7 @@ package com.cg.train.dispatcher;
 import com.cg.train.annotation.*;
 import com.cg.train.util.ClassUtil;
 import com.cg.train.util.FileUtil;
+import com.cg.train.util.scanner.DefaultClassScanner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -53,7 +54,8 @@ public class Dispatcher {
      * @param basePackage
      */
     public synchronized void load(String basePackage) {
-        Set<Class<?>> classes = FileUtil.getClasses(basePackage);
+
+        Set<Class<?>> classes = DefaultClassScanner.getInstance().getClassList(basePackage, null);
         commanders.clear();
         gameBean.clear();
         classes.forEach(cls -> {

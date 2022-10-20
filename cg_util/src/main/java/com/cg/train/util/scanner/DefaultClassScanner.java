@@ -16,12 +16,12 @@ import java.util.Set;
  * @Version 1.0
  */
 public class DefaultClassScanner implements ClassScanner{
-    private static final DefaultClassScanner CLASS_SCANNER = new DefaultClassScanner();
+    private static final DefaultClassScanner INSTANCE = new DefaultClassScanner();
 
     private DefaultClassScanner() {}
 
     public static DefaultClassScanner getInstance() {
-        return CLASS_SCANNER;
+        return INSTANCE;
     }
 
     @Override
