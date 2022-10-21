@@ -52,7 +52,10 @@
         <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$/cg_base_server" />
+            <option value="$PROJECT_DIR$/cg_common" />
             <option value="$PROJECT_DIR$/cg_game_server" />
+            <option value="$PROJECT_DIR$/cg_util" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -1,6 +1,7 @@
 package com.cg.train;
 
 
+import com.cg.train.dispatcher.Dispatcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,6 +21,6 @@ public class GameServer extends BaseServer{
     }
     public static void main(String[] args) {
         instance.start(1,1);
-//        instance.initComponent(Dispatcher, "加载json");
+        instance.initComponent(Dispatcher.getInstance().load("com.cg.train"), "扫描加载游戏对象");
     }
 }

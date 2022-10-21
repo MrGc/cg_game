@@ -4,15 +4,13 @@ import com.cg.train.annotation.*;
 import com.cg.train.util.ClassUtil;
 import com.cg.train.util.FileUtil;
 import com.cg.train.util.scanner.DefaultClassScanner;
+import com.cg.train.util.scanner.DefaultMethodScanner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -53,32 +51,42 @@ public class Dispatcher {
      * 扫描并加载类
      * @param basePackage
      */
-    public synchronized void load(String basePackage) {
-
+    public synchronized boolean load(String basePackage) {
         Set<Class<?>> classes = DefaultClassScanner.getInstance().getClassList(basePackage, null);
         commanders.clear();
         gameBean.clear();
-        classes.forEach(cls -> {
+        for (Class<?> cls : classes) {
             //扫描到controller层，协议入口都是在controller类下面
             if (cls.isAnnotationPresent(Controller.class)) {
-                loadController(cls);
+                if (!loadController(cls)) {
+                    return false;
+                }
             }
             if (cls.isAnnotationPresent(Service.class)) {
-                loadService(cls);
+                if (!loadService(cls)) {
+                    return false;
+                }
             }
             if (cls.isAnnotationPresent(Dao.class)) {
-                loadDao(cls);
+                if (!loadDao(cls)) {
+                    return false;
+                }
             }
             if (cls.isAnnotationPresent(JsonBean.class)) {
-                loadJson(cls);
+                if (!loadJson(cls)) {
+                    return false;
+                }
             }
-        });
+
+            List<Method> methodListByAnnotation = DefaultMethodScanner.getInstance().getMethodListByAnnotation(cls, Listener.class);
+        }
+
 
         //装配gameBean
-        autowiredGameBean();
+        return autowiredGameBean();
     }
 
-    private void autowiredGameBean() {
+    private boolean autowiredGameBean() {
         for (Object bean : gameBean.values()) {
             Class<?> beanClass = bean.getClass();
             Field[] fields = beanClass.getFields();
@@ -89,20 +97,22 @@ public class Dispatcher {
                     Object fieldBean = getBean(field.getType());
                     if (fieldBean == null) {
                         log.warn("Autowired对象不存在：{}", field.getType());
-                        continue;
+                        return false;
                     }
                     try {
                         field.set(bean, fieldBean);
                     } catch (Exception e) {
                         log.error("Autowired对象装配实拍", e);
+                        return false;
                     }
                     field.setAccessible(b);
                 }
             }
         }
+        return true;
     }
 
-    private void loadDao(Class<?> cls) {
+    private boolean loadDao(Class<?> cls) {
         try {
             Object o = ClassUtil.createObject(cls.getName());
             Class<?>[] interfaces = cls.getInterfaces();
@@ -114,10 +124,12 @@ public class Dispatcher {
             gameBean.put(cls.getName(), o);
         } catch (Exception e) {
             log.error("Service 【" + cls + "】 加载出错！！！", e);
+            return false;
         }
+        return true;
     }
 
-    private void loadService(Class<?> cls) {
+    private boolean loadService(Class<?> cls) {
         try {
             Object o = ClassUtil.createObject(cls.getName());
             Class<?>[] interfaces = cls.getInterfaces();
@@ -128,13 +140,19 @@ public class Dispatcher {
             }
         } catch (Exception e) {
             log.error("Service 【" + cls + "】 加载出错！！！", e);
+            return false;
         }
+        return true;
     }
 
-    private void loadJson(Class<?> cls) {
+    private boolean loadJson(Class<?> cls) {
         try {
             if (Arrays.stream(cls.getInterfaces()).anyMatch(p -> p == IReload.class)) {
                 Object o = ClassUtil.createObject(cls.getName());
+                if (o == null) {
+                    log.warn("json[" + cls + "]加载出错！！！");
+                    return false;
+                }
                 //缓存游戏对象
                 gameBean.put(cls.getName(), o);
                 //reload json配置
@@ -143,10 +161,12 @@ public class Dispatcher {
 
         } catch (Exception e) {
             log.error("json[" + cls + "]加载出错！！！", e);
+            return false;
         }
+        return true;
     }
 
-    private void loadController(Class<?> cls) {
+    private boolean loadController(Class<?> cls) {
         try {
             Object o = ClassUtil.createObject(cls.getName());
             //缓存游戏对象
@@ -161,7 +181,9 @@ public class Dispatcher {
             }
         } catch (Exception e) {
             log.error("协议[" + cls + "]加载出错!!!", e);
+            return false;
         }
+        return true;
     }
 
     public <T> T getBean(Class<T> cls) {

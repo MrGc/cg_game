@@ -22,7 +22,7 @@ public class ClassUtil {
         try {
             return ClassUtils.getClass(className).getDeclaredConstructor().newInstance();
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("", e);
         }
         return null;
     }

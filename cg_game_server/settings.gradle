@@ -1,2 +1,9 @@
 rootProject.name = 'cg_game_server'
 
+include 'cg_util'
+project(':cg_util').projectDir = file('../cg_util')
+include 'cg_common'
+project(':cg_common').projectDir = file('../cg_common')
+include 'cg_base_server'
+project(':cg_base_server').projectDir = file('../cg_base_server')
+

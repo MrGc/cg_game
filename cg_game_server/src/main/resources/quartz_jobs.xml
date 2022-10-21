@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<job-scheduling-data
+        xmlns="http://www.quartz-scheduler.org/xml/JobSchedulingData"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.quartz-scheduler.org/xml/JobSchedulingData
+	http://www.quartz-scheduler.org/xml/job_scheduling_data_1_8.xsd"
+        version="1.8">
+
+    <schedule>
+        <job>
+            <name>JOBS</name>
+            <group>AUTO</group>
+            <description>cg</description>
+            <job-class>com.cg.train.event.QuartzJob</job-class>
+        </job>
+        <!-- 0点触发事件 -->
+        <trigger>
+            <cron>
+                <name>0</name>
+                <job-name>JOBS</job-name>
+                <job-group>AUTO</job-group>
+                <cron-expression>0 0 0 * * ?</cron-expression>
+            </cron>
+        </trigger>
+
+        <!-- 每两秒触发一次(用于系统轮询)-->
+        <trigger>
+            <cron>
+                <name>1</name>
+                <job-name>JOBS</job-name>
+                <job-group>AUTO</job-group>
+                <cron-expression>0/2 * * * * ? </cron-expression>
+            </cron>
+        </trigger>
+
+        <!-- 每8分钟触发一次(用于系统保存公共数据)-->
+        <trigger>
+            <cron>
+                <name>2</name>
+                <job-name>JOBS</job-name>
+                <job-group>AUTO</job-group>
+                <cron-expression>0 0/8 * * * ? </cron-expression>
+            </cron>
+        </trigger>
+
+        <!-- 每小时触发一次-->
+        <trigger>
+            <cron>
+                <name>3</name>
+                <job-name>JOBS</job-name>
+                <job-group>AUTO</job-group>
+                <cron-expression>0 0 0/1 * * ? </cron-expression>
+            </cron>
+        </trigger>
+        <!-- 5点触发事件 -->
+        <trigger>
+            <cron>
+                <name>4</name>
+                <job-name>JOBS</job-name>
+                <job-group>AUTO</job-group>
+                <cron-expression>0 0 5 * * ?</cron-expression>
+            </cron>
+        </trigger>
+
+    </schedule>
+</job-scheduling-data>
