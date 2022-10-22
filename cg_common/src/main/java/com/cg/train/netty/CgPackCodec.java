@@ -1,4 +1,4 @@
-package com.cg.train.dispatcher;
+package com.cg.train.netty;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -11,12 +11,12 @@ import org.slf4j.LoggerFactory;
  * @Date: 2022/10/17 17:42
  * @Version: 1.0.0
  */
-public class PackCodec {
-    public static final Logger log = LoggerFactory.getLogger(PackCodec.class);
+public class CgPackCodec {
+    public static final Logger log = LoggerFactory.getLogger(CgPackCodec.class);
     /** 协议头的长度 */
     public static final int HEAD_LEN = 12;
 
-    public static Pack tcpDecode(ByteBuf msg) {
+    public static CgPack tcpDecode(ByteBuf msg) {
         msg.markReaderIndex();
         int length = msg.readInt();
         int dataLen = length - HEAD_LEN;
@@ -33,18 +33,18 @@ public class PackCodec {
             msg.readBytes(newData);
         }
 
-        return new Pack(componentId, cmdId, new String(newData));
+        return new CgPack(componentId, cmdId, new String(newData));
     }
 
     /**
      * 封装tcpSocket协议
-     * @param pack
+     * @param cgPack
      * @return
      */
-    public static byte[] tcpEncode(Pack pack) {
-        int componentId = pack.componentId();
-        int cmd = pack.cmdId();
-        byte[] data = pack.msg().getBytes();
+    public static byte[] tcpEncode(CgPack cgPack) {
+        int componentId = cgPack.componentId();
+        int cmd = cgPack.cmdId();
+        byte[] data = cgPack.msg().getBytes();
 
         int length = HEAD_LEN + data.length;
         ByteBuf buf = Unpooled.buffer(length);

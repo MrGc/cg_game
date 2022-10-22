@@ -1,8 +1,8 @@
 package com.cg.train.dispatcher;
 
 import com.cg.train.annotation.*;
+import com.cg.train.netty.CgPack;
 import com.cg.train.util.ClassUtil;
-import com.cg.train.util.FileUtil;
 import com.cg.train.util.scanner.DefaultClassScanner;
 import com.cg.train.util.scanner.DefaultMethodScanner;
 import org.slf4j.Logger;
@@ -31,7 +31,7 @@ public class Dispatcher {
     /** 游戏对象 key-注解的对象类名, value-object */
     private final Map<String, Object> gameBean = new ConcurrentHashMap<>();
 
-    public Pack invoke(long playerId, int componentId, int cmdId, String data) throws Exception {
+    public CgPack invoke(long playerId, int componentId, int cmdId, String data) throws Exception {
         //todo craig
         String cmd = componentId + "_" + cmdId;
         Commander commander = commanders.get(cmd);

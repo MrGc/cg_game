@@ -60,6 +60,7 @@ public abstract class BaseServer {
     public boolean initComponent(boolean initResult, String componentName) {
         if (!initResult) {
             logger.warn(componentName + "错误");
+            System.exit(-1);
         } else {
             logger.info(componentName + "加载完成.耗时 : " + (System.currentTimeMillis() - lastInitMillis) + " ms");
         }

@@ -21,6 +21,6 @@ public class GameServer extends BaseServer{
     }
     public static void main(String[] args) {
         instance.start(1,1);
-        instance.initComponent(Dispatcher.getInstance().load("com.cg.train"), "扫描加载游戏对象");
+        instance.initComponent(Dispatcher.getInstance().load("com.cg.train"), "注解解析");
     }
 }
