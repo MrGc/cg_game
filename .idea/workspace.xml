@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="28a1808a-c7d5-431e-8460-bc25446904c9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_common.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_common.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_cross_server.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_game_server.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_login_server.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_protocal.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_rpc_akka.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_util.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/thriftCompiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/cg_common/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_common/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/cg_common/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_game_server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/cg_game_server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_game_server/src/main/java/com/cg/train/GameServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/cg_rpc_akka/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/src/main/java/com/cg/train/akka/GcActorSystem.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/cg_base_server">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/cg_common">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/cg_conf">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/cg_cross_server">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/cg_game_server">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/cg_login_server">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/cg_protocal">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/cg_rpc_akka">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/cg_util">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2GecZGaey2ABmd39H2lkpYtaual" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/data/workspace/cg_game_frame/cg_game"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="28a1808a-c7d5-431e-8460-bc25446904c9" name="Changes" comment="" />
+      <created>1666752543389</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666752543389</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
