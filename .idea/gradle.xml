@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -21,17 +22,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/cg_common" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/cg_conf" />
-        <option name="gradleHome" value="D:/gradle-6.8.3" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/cg_conf" />
+            <option value="$PROJECT_DIR$/cg_util" />
           </set>
         </option>
       </GradleProjectSettings>
@@ -79,17 +70,6 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/cg_protocal" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/cg_rpc_akka" />
-        <option name="gradleHome" value="D:/gradle-6.8.3" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/cg_rpc_akka" />
           </set>
         </option>
       </GradleProjectSettings>

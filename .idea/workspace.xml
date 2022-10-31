@@ -4,36 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28a1808a-c7d5-431e-8460-bc25446904c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+    <list default="true" id="28a1808a-c7d5-431e-8460-bc25446904c9" name="Changes" comment="feature：【first commit】 first commit&#10;&#10;first commit">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/thriftCompiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/PlayerActor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/ProtoCmd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/akka/actor/player/KickOff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/akka/actor/player/PlayerActor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/akka/actor/player/ProtoCmd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/akka/actor/system/CgSysCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/akka/actor/system/RegisterPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/akka/actor/system/SysActor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_util/src/main/java/com/cg/train/util/ProtoStuffUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_common.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_common.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_cross_server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_game_server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_login_server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_protocal.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_rpc_akka.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cg_util.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/thriftCompiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cg_common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/cg_common/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cg_common/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/cg_common/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/akka/ILoginActor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/akka/IPlayerActor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/dispatcher/Dispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/dispatcher/Dispatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/netty/CgPack.java" beforeDir="false" afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/netty/CgPack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/netty/CgPackCodec.java" beforeDir="false" afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/netty/CgPackCodec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/netty/CgServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/netty/CgServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/netty/PlayerSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/netty/PlayerSession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cg_game_server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/cg_game_server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cg_game_server/src/main/java/com/cg/train/GameServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/cg_rpc_akka/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/src/main/java/com/cg/train/akka/GcActorSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/src/main/java/com/cg/train/akka/CgAkkaCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/src/main/java/com/cg/train/akka/actors/player/CgPlayerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/cg_common/src/main/java/CgPlayerCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cg_rpc_akka/src/main/java/com/cg/train/akka/actors/player/PlayerActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/akka/actor/player/CgPlayerCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +91,15 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -102,9 +118,24 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/data/workspace/cg_game_frame/cg_game"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "G:/trunk",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\data\workspace\cg_game_frame\cg_game\cg_common\src\main\java\com\cg\train\akka\actor\player" />
+      <recent name="C:\data\workspace\cg_game_frame\cg_game\cg_common\src\main\java" />
+      <recent name="C:\data\workspace\cg_game_frame\cg_game\cg_game_server\src\main\java\com\cg\train\akka\actors\player" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cg.train.akka.actor.system" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -114,6 +145,14 @@
       <option name="presentableId" value="Default" />
       <updated>1666752543389</updated>
     </task>
+    <task id="LOCAL-00001" summary="feature：【first commit】 first commit&#10;&#10;first commit">
+      <created>1666752723937</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666752723937</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,5 +165,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feature：【first commit】 first commit&#10;&#10;first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature：【first commit】 first commit&#10;&#10;first commit" />
   </component>
 </project>

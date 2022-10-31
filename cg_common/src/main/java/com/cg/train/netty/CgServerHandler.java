@@ -1,5 +1,9 @@
 package com.cg.train.netty;
 
+import com.cg.train.akka.actor.player.KickOff;
+import com.cg.train.akka.actor.player.ProtoCmd;
+import com.cg.train.dispatcher.Commander;
+import com.cg.train.dispatcher.Dispatcher;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.timeout.ReadTimeoutException;
@@ -22,7 +26,16 @@ public class CgServerHandler extends SimpleChannelInboundHandler<CgPack> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, CgPack msg) throws Exception {
         //todo craig 协议分发放到akka做。
-//        msg.componentId()
+        Commander commander = Dispatcher.getInstance().getCommander(msg.componentId(), msg.cmdId());
+        if (commander == null) {
+            //todo
+            return;
+        }
+        //登录前的处理
+        if (msg.componentId() == 1) {
+
+        }
+        playerSession.getPlayerActor().tell(new ProtoCmd(commander, msg.msg()));
     }
 
     /**
@@ -49,9 +62,9 @@ public class CgServerHandler extends SimpleChannelInboundHandler<CgPack> {
         super.channelInactive(ctx);
         log.info("ip:"+ctx.channel().remoteAddress()+",disconnected server");
         //掉线处理
-//        if (playerSession.getUserId() != null) {
-//            playerSession.getActor().kickOff(playerSession);
-//        }
+        if (playerSession.getUserId() <= 0) {
+            playerSession.getPlayerActor().tell(new KickOff(playerSession.getUserId()));
+        }
 
     }
 
@@ -67,12 +80,12 @@ public class CgServerHandler extends SimpleChannelInboundHandler<CgPack> {
             if(playerSession == null){
                 log.warn("this channel is read time out address="+ctx.channel().remoteAddress());
             }else{
-//                log.warn(playerSession.getUserId()+",this player read time out address="+ctx.channel().remoteAddress());
-//                playerSession.getActor().kickOff(playerSession);
+                log.warn(playerSession.getUserId()+",this player read time out address="+ctx.channel().remoteAddress());
+                playerSession.getPlayerActor().tell(new KickOff(playerSession.getUserId()));
             }
         } else if(cause instanceof OutOfMemoryError){
             if(playerSession != null){
-//                playerSession.getActor().kickOff(playerSession);
+                playerSession.getPlayerActor().tell(new KickOff(playerSession.getUserId()));
             }
         }else{
             log.error("",cause.getCause());

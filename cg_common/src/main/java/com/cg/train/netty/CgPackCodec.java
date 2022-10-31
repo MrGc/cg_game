@@ -1,5 +1,8 @@
 package com.cg.train.netty;
 
+import com.cg.train.dispatcher.Commander;
+import com.cg.train.dispatcher.Dispatcher;
+import com.cg.train.util.ProtoStuffUtil;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import org.slf4j.Logger;
@@ -28,12 +31,16 @@ public class CgPackCodec {
         int componentId = msg.readInt();
         int cmdId = msg.readInt();
         byte[] newData = new byte[dataLen];
-
+        Object param = null;
         if (newData.length > 0) {
+            Commander commander = Dispatcher.getInstance().getCommander(componentId, cmdId);
+            Class<?>[] parameterTypes = commander.method().getParameterTypes();
+            Class<?> parameterType = parameterTypes[0];
             msg.readBytes(newData);
+            param = ProtoStuffUtil.deserializer(newData, parameterType);
         }
 
-        return new CgPack(componentId, cmdId, new String(newData));
+        return new CgPack(componentId, cmdId, param);
     }
 
     /**
@@ -44,7 +51,7 @@ public class CgPackCodec {
     public static byte[] tcpEncode(CgPack cgPack) {
         int componentId = cgPack.componentId();
         int cmd = cgPack.cmdId();
-        byte[] data = cgPack.msg().getBytes();
+        byte[] data = ProtoStuffUtil.serializer(cgPack.msg());
 
         int length = HEAD_LEN + data.length;
         ByteBuf buf = Unpooled.buffer(length);

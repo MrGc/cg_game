@@ -31,20 +31,8 @@ public class Dispatcher {
     /** 游戏对象 key-注解的对象类名, value-object */
     private final Map<String, Object> gameBean = new ConcurrentHashMap<>();
 
-    public CgPack invoke(long playerId, int componentId, int cmdId, String data) throws Exception {
-        //todo craig
-        String cmd = componentId + "_" + cmdId;
-        Commander commander = commanders.get(cmd);
-        if (commander == null) {
-            return null;
-        }
-        long begin = System.currentTimeMillis();
-
-        log.info("客户端协议内容：player:{}, cmd: {}, param:{}", playerId, cmd,  data);
-        Object[] argsValues = new Object[2];
-        long used = System.currentTimeMillis() - begin;
-        log.debug("协议[{}]处理完成，耗时{}ms", cmd, used);
-        return null;
+    public Commander getCommander(int componentId, int cmdId) {
+        return commanders.get(componentId+ "_" + cmdId);
     }
 
     /**

@@ -1,4 +1,4 @@
-package com.cg.train.akka.actors.player;
+package com.cg.train.akka.actor.player;
 
 /**
  * @Description:
@@ -7,4 +7,5 @@ package com.cg.train.akka.actors.player;
  * @Version: 1.0.0
  */
 public interface CgPlayerCommand {
+
 }

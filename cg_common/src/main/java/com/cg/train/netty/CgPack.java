@@ -6,6 +6,6 @@ package com.cg.train.netty;
  * @Date: 2022/10/17 16:11
  * @Version: 1.0.0
  */
-public record CgPack(int componentId, int cmdId, String msg) {
+public record CgPack(int componentId, int cmdId, Object msg) {
 
 }
