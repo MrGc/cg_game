@@ -53,8 +53,9 @@ dependencies {
     testImplementation "com.typesafe.akka:akka-actor-testkit-typed_${versions.ScalaBinary}"
     testImplementation "com.typesafe.akka:akka-stream-testkit_${versions.ScalaBinary}"
 
+    implementation 'com.zaxxer:HikariCP:4.0.3'
 
-     implementation project(':cg_util')
+    implementation project(':cg_util')
 
 
 }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cg.train.db.dao.DdlMapper">
+	<!-- 新增表  --> 
+	<update id="createTable" parameterType="String">
+		create table ${value}
+	</update>
+	<!-- 删除表 -->
+	<update id="dropTable" parameterType="String">
+		drop table `${value}`;
+	</update>
+
+	<!-- 新增字段  --> 
+	<update id="addColumn" parameterType="AlterColumn">
+		alter table `${tbName}` add column `${field}` ${type} ${isNull} ${defVal} COMMENT #{comment};
+	</update>
+	
+	<!-- 修改字段  --> 
+	<update id="modifyColumn" parameterType="AlterColumn">  
+		alter table `${tbName}` modify column `${field}` ${type} ${isNull} ${defVal} COMMENT #{comment};
+	</update>
+	
+	<!-- 删除字段  --> 
+	<update id="dropColumn" parameterType="java.util.Map">
+		ALTER TABLE `${tbName}` DROP COLUMN `${fieldName}`
+	</update>
+
+	<select id="showTables" resultType="String">
+		show tables;
+	</select>
+
+	<select id="descTable" resultType="FieldStru" parameterType="String">
+		desc ${value}
+	</select>	
+	
+	<select id="showKeys" parameterType="String" resultType="KeyStru">
+		show keys from ${value}
+	</select>
+	<!-- 查找起始值 -->
+	<select id="findAutoIncrement" resultType="java.util.Map">
+		SELECT table_name,auto_increment FROM information_schema.tables WHERE table_schema=database() and auto_increment is not null;
+	</select>
+
+	<update id="modifyIndex" parameterType="String">
+		ALTER table ${value} USING BTREE
+	</update>
+	
+	<update id="dropIndex" parameterType="java.util.Map">
+		ALTER table `${tbName}` DROP INDEX ${keyName}
+	</update>
+	<!-- 修改起始id -->
+	<update id="alterAutoId" parameterType="java.util.Map">
+		ALTER table `${tbName}` auto_increment=${autoId}
+	</update>
+</mapper>
