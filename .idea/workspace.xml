@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28a1808a-c7d5-431e-8460-bc25446904c9" name="Changes" comment="feature：【first commit】 first commit&#10;&#10;first commit">
-      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/db/dao/DDLDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/db/dao/HikariCPDataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/db/dao/MyBatisServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/db/dao/ddlMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cg_game_server/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/db/ICache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/redis/IRedisCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cg_common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/cg_common/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cg_common/src/main/java/CgPlayerCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cg_common/src/main/java/PlayerActor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cg_common/src/main/java/ProtoCmd.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/annotation/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/annotation/Dao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +64,7 @@
         <option value="AnnotationType" />
         <option value="Record" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -136,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667227533905</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feature：【first commit】 first commit&#10;&#10;first commit">
+      <created>1667301359021</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667301359021</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
