@@ -209,7 +209,7 @@ public interface IRedisCommand {
     Long lpush(byte[] key, byte[]... strings);
 
     /**
-     * redis 哈希(Hash)操作
+     * redis 列表(List)操作
      * 将元素集合添加到键的尾部，
      * @param key 键
      * @param strings 元素列表
@@ -301,7 +301,7 @@ public interface IRedisCommand {
     /**
      * 移除key的过期时间，key将持久保持
      * @param key 键
-     * @return
+     * @return 成功返回1，否则0
      */
     Long persist(byte[] key);
 
@@ -352,6 +352,21 @@ public interface IRedisCommand {
     Long ttl(byte[] key);
 
     /**
+     * 对key的值排序
+     * @param key 键
+     * @return 返回排序好的值的集合，不影响redis数据
+     */
+    List<byte[]> sort(byte[] key);
+
+    /**
+     * 对key的值排序
+     * @param key 键
+     * @param sortingParameters 排序参数
+     * @return 返回排序好的值的集合，不影响redis数据
+     */
+    List<byte[]> sort(byte[] key, SortingParams sortingParameters);
+
+    /**
      * Redis 集合(Set)操作
      * 向集合添加一个或多个成员
      * @param key 键
@@ -390,7 +405,7 @@ public interface IRedisCommand {
      * 移除并返回集合中的count个随机成员
      * @param key 键
      * @param count 移除的成员个数
-     * @return
+     * @return 移除的成员
      */
     Set<byte[]> spop(byte[] key, long count);
 
@@ -407,7 +422,7 @@ public interface IRedisCommand {
      * 判断 member 是否是集合 key 的成员
      * @param key 键
      * @param member 成员
-     * @return
+     * @return 是否成功
      */
     Boolean sismember(byte[] key, byte[] member);
 
@@ -452,7 +467,7 @@ public interface IRedisCommand {
      * @param key 键
      * @param start 开始的索引
      * @param end   结束的索引
-     * @return
+     * @return 成员列表
      */
     Set<byte[]> zrange(byte[] key, long start, long end);
 
@@ -541,21 +556,6 @@ public interface IRedisCommand {
     Double zscore(byte[] key, byte[] member);
 
     /**
-     * 对key的值排序
-     * @param key 键
-     * @return 返回排序好的值的集合，不影响redis数据
-     */
-    List<byte[]> sort(byte[] key);
-
-    /**
-     * 对key的值排序
-     * @param key 键
-     * @param sortingParameters 排序参数
-     * @return 返回排序好的值的集合，不影响redis数据
-     */
-    List<byte[]> sort(byte[] key, SortingParams sortingParameters);
-
-    /**
      * Redis 有序集合(sorted set)操作
      * 计算在有序集合中指定区间分数的成员数
      * @param key 键
@@ -595,15 +595,73 @@ public interface IRedisCommand {
      */
     Set<byte[]> zrangeByScore(byte[] key, byte[] min, byte[] max);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 通过分数返回有序集合指定区间内的成员
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @param offset 偏移量
+     * @param count 个数
+     * @return 成员集合
+     */
     Set<byte[]> zrangeByScore(byte[] key, double min, double max, int offset, int count);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 通过分数返回有序集合指定区间内的成员
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @param offset 偏移量
+     * @param count 个数
+     * @return 成员集合
+     */
     Set<byte[]> zrangeByScore(byte[] key, byte[] min, byte[] max, int offset, int count);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 通过分数返回有序集合指定区间内的成员
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @return （成员，分数）集合
+     */
     Set<Tuple> zrangeByScoreWithScores(byte[] key, double min, double max);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 通过分数返回有序集合指定区间内的成员
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @return （成员，分数）集合
+     */
     Set<Tuple> zrangeByScoreWithScores(byte[] key, byte[] min, byte[] max);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 通过分数返回有序集合指定区间内的成员
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @param offset 偏移量
+     * @param count 个数
+     * @return （成员，分数）集合
+     */
     Set<Tuple> zrangeByScoreWithScores(byte[] key, double min, double max, int offset, int count);
+
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 通过分数返回有序集合指定区间内的成员
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @param offset 偏移量
+     * @param count 个数
+     * @return （成员，分数）集合
+     */
+    Set<Tuple> zrangeByScoreWithScores(byte[] key, byte[] min, byte[] max, int offset, int count);
 
     /**
      * Redis 有序集合(sorted set)操作
@@ -625,39 +683,183 @@ public interface IRedisCommand {
      */
     Set<byte[]> zrevrangeByScore(byte[] key, byte[] max, byte[] min);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 通过分数返回有序集合指定区间内的成员 降序
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @param offset 偏移量
+     * @param count 个数
+     * @return 成员集合 降序
+     */
     Set<byte[]> zrevrangeByScore(byte[] key, double max, double min, int offset, int count);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 通过分数返回有序集合指定区间内的成员 降序
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @param offset 偏移量
+     * @param count 个数
+     * @return 成员集合 降序
+     */
     Set<byte[]> zrevrangeByScore(byte[] key, byte[] max, byte[] min, int offset, int count);
-
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 通过分数返回有序集合指定区间内的成员 降序
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @return （成员，分数）集合 降序
+     */
     Set<Tuple> zrevrangeByScoreWithScores(byte[] key, double max, double min);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 通过分数返回有序集合指定区间内的成员 降序
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @return （成员，分数）集合 降序
+     */
     Set<Tuple> zrevrangeByScoreWithScores(byte[] key, byte[] max, byte[] min);
 
-    Set<Tuple> zrangeByScoreWithScores(byte[] key, byte[] min, byte[] max, int offset, int count);
-
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 通过分数返回有序集合指定区间内的成员 降序
+     * @param key 键
+     * @param max 最大分数
+     * @param min 最小分数
+     * @param offset 偏移量
+     * @param count 个数
+     * @return （成员，分数）集合 降序
+     */
     Set<Tuple> zrevrangeByScoreWithScores(byte[] key, double max, double min, int offset, int count);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 通过分数返回有序集合指定区间内的成员 降序
+     * @param key 键
+     * @param max 最大分数
+     * @param min 最小分数
+     * @param offset 偏移量
+     * @param count 个数
+     * @return （成员，分数）集合 降序
+     */
     Set<Tuple> zrevrangeByScoreWithScores(byte[] key, byte[] max, byte[] min, int offset, int count);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 移除有序集合中给定的排名区间的所有成员
+     * @param key 键
+     * @param start 开始排名索引
+     * @param end   结束的排名索引
+     * @return 成功删除的成员个数
+     */
     Long zremrangeByRank(byte[] key, long start, long end);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 移除有序集合中给定的分数区间的所有成员
+     * @param key 键
+     * @param start 开始分数索引
+     * @param end   结束分数索引
+     * @return 成功删除的成员个数
+     */
     Long zremrangeByScore(byte[] key, double start, double end);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 移除有序集合中给定的分数区间的所有成员
+     * @param key 键
+     * @param start 开始分数索引
+     * @param end   结束分数索引
+     * @return 成功删除的成员个数
+     */
     Long zremrangeByScore(byte[] key, byte[] start, byte[] end);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 在有序集合中计算指定字典区间内成员数量
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @return 成员数量
+     */
     Long zlexcount(final byte[] key, final byte[] min, final byte[] max);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 在有序集合中计算指定字典区间内成员
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @return 成员集合
+     */
     Set<byte[]> zrangeByLex(final byte[] key, final byte[] min, final byte[] max);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 在有序集合中计算指定字典区间内成员
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @param offset 偏移量
+     * @param  count 数量
+     * @return 成员集合
+     */
     Set<byte[]> zrangeByLex(final byte[] key, final byte[] min, final byte[] max, final int offset, final int count);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 在有序集合中计算指定字典区间内成员 降序
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @return 成员集合 降序
+     */
     Set<byte[]> zrevrangeByLex(final byte[] key, final byte[] max, final byte[] min);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 在有序集合中计算指定字典区间内成员 降序
+     * @param key 键
+     * @param min 最小分数
+     * @param max 最大分数
+     * @param offset 偏移量
+     * @param  count 数量
+     * @return 成员集合 降序
+     */
     Set<byte[]> zrevrangeByLex(final byte[] key, final byte[] max, final byte[] min, final int offset, final int count);
 
+    /**
+     * Redis 有序集合(sorted set)操作
+     * 移除有序集合中给定的字典区间的所有成员
+     * @param key 键
+     * @param min 开始索引
+     * @param max   结束索引
+     * @return 成功删除的成员个数
+     */
     Long zremrangeByLex(final byte[] key, final byte[] min, final byte[] max);
 
+    /**
+     * Redis 脚本命令
+     * @param script 脚本
+     * @param keyCount 指定键名参数的个数
+     * @param params 从 EVAL 的第三个参数开始算起，表示在脚本中所用到的那些 Redis 键(key)，这些键名参数可以在 Lua 中通过全局变量 KEYS 数组，用 1 为基址的形式访问( KEYS[1] ， KEYS[2] ，以此类推)。
+     *                附加参数，在 Lua 中通过全局变量 ARGV 数组访问，访问的形式和 KEYS 变量类似( ARGV[1] 、 ARGV[2] ，诸如此类)。
+     * @return 执行结果
+     */
     Object eval(byte[] script, int keyCount, byte[]... params);
 
+    /**
+     * Redis 脚本命令
+     * @param script 脚本
+     * @param keys 表示在脚本中所用到的那些 Redis 键(key)，这些键名参数可以在 Lua 中通过全局变量 KEYS 数组，用 1 为基址的形式访问( KEYS[1] ， KEYS[2] ，以此类推)。
+     * @param args 附加参数，在 Lua 中通过全局变量 ARGV 数组访问，访问的形式和 KEYS 变量类似( ARGV[1] 、 ARGV[2] ，诸如此类)。
+     * @return 执行结果
+     */
     Object eval(byte[] script, List<byte[]> keys, List<byte[]> args);
 }
