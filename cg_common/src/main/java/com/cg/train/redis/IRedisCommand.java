@@ -1,5 +1,6 @@
 package com.cg.train.redis;
 
+import redis.clients.jedis.params.SetParams;
 import redis.clients.jedis.params.SortingParams;
 import redis.clients.jedis.resps.Tuple;
 
@@ -29,14 +30,13 @@ public interface IRedisCommand {
      * 设置值
      * @param key 键
      * @param value 值
-     * @param nxxx  nx-只在键不存在时， 才对键进行设置操作； <b>SET key value NX</b>
-     *              xx-只在键已经存在时， 才对键进行设置操作。 <b>SET key value XX</b>
-     * @param expx  ex-将过期时间设置为seconds 秒； <b>SET key value EX seconds</b>
-     *              px-将过期时间设置为milliseconds 毫秒； <b>SET key vaule PX milliseconds</b>
-     * @param time 过期时间
+     * @param setParams  nx-只在键不存在时， 才对键进行设置操作； <b>SET key value NX</b>
+     *                  xx-只在键已经存在时， 才对键进行设置操作。 <b>SET key value XX</b>
+     *                  ex-将过期时间设置为seconds 秒； <b>SET key value EX seconds</b>
+     *                  px-将过期时间设置为milliseconds 毫秒； <b>SET key vaule PX milliseconds</b>
      * @return boolean 命令操作成功完成时才返回 OK
      */
-    boolean set(byte[] key, byte[] value,  byte[] nxxx, byte[] expx, int time);
+    boolean set(byte[] key, byte[] value, SetParams setParams);
 
     /**
      * redis 字符串操作

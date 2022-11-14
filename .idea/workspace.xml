@@ -5,6 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28a1808a-c7d5-431e-8460-bc25446904c9" name="Changes" comment="feature：【first commit】 first commit&#10;&#10;first commit">
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/redis/AbstractRedis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/redis/RedisAllCommandExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/redis/RedisCommandExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/redis/RedisKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/redis/RedisMultiBinaryCommandExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/redis/RedisMultiCommandExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/redis/SHA1Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cg_util/src/main/java/com/cg/train/util/HttpStressTesting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/redis/IRedisCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/cg_common/src/main/java/com/cg/train/redis/IRedisCommand.java" afterDir="false" />
     </list>
@@ -62,8 +70,8 @@
       <list>
         <option value="AnnotationType" />
         <option value="Record" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -102,6 +110,7 @@
       <recent name="C:\data\workspace\cg_game_frame\cg_game\cg_game_server\src\main\java\com\cg\train\akka\actors\player" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cg.train.redis" />
       <recent name="com.cg.train.akka.actor.system" />
     </key>
   </component>
@@ -142,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667479025483</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feature：【first commit】 first commit&#10;&#10;first commit">
+      <created>1667556760897</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667556760897</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
