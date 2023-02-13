@@ -64,17 +64,6 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/cg_protocal" />
-        <option name="gradleHome" value="D:/gradle-6.8.3" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/cg_protocal" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/cg_util" />
         <option name="gradleHome" value="D:/gradle-6.8.3" />
         <option name="gradleJvm" value="#JAVA_HOME" />

@@ -1,0 +1,17 @@
+syntax = 'proto3';
+option java_multiple_files=true;
+option java_generic_services = true;
+package com.gc.train.rpc;
+
+message TestRequest {
+  int64 userId = 1;
+}
+
+message TestResponse {
+  string phone = 1;
+  string email = 2;
+}
+
+service DataRepo {
+  rpc GetUserTest(TestRequest) returns (TestResponse);
+}

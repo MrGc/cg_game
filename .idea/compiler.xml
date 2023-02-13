@@ -2,6 +2,36 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="cg_base_server" target="17" />
+      <module name="cg_base_server.main" target="17" />
+      <module name="cg_base_server.test" target="17" />
+      <module name="cg_common" target="17" />
+      <module name="cg_common.cg_util" target="17" />
+      <module name="cg_common.cg_util.main" target="17" />
+      <module name="cg_common.cg_util.test" target="17" />
+      <module name="cg_common.main" target="17" />
+      <module name="cg_common.test" target="17" />
+      <module name="cg_cross_server" target="17" />
+      <module name="cg_cross_server.main" target="17" />
+      <module name="cg_cross_server.test" target="17" />
+      <module name="cg_game_server" target="17" />
+      <module name="cg_game_server.cg_base_server" target="17" />
+      <module name="cg_game_server.cg_base_server.main" target="17" />
+      <module name="cg_game_server.cg_base_server.test" target="17" />
+      <module name="cg_game_server.cg_common" target="17" />
+      <module name="cg_game_server.cg_common.main" target="17" />
+      <module name="cg_game_server.cg_common.test" target="17" />
+      <module name="cg_game_server.cg_util" target="17" />
+      <module name="cg_game_server.cg_util.main" target="17" />
+      <module name="cg_game_server.cg_util.test" target="17" />
+      <module name="cg_game_server.main" target="17" />
+      <module name="cg_game_server.test" target="17" />
+      <module name="cg_login_server" target="1.8" />
+      <module name="cg_login_server.main" target="1.8" />
+      <module name="cg_login_server.test" target="1.8" />
+      <module name="cg_protocal" target="1.8" />
+      <module name="cg_protocal.main" target="1.8" />
+      <module name="cg_protocal.test" target="1.8" />
       <module name="cg_rpc_akka" target="17" />
       <module name="cg_rpc_akka.cg_common" target="17" />
       <module name="cg_rpc_akka.cg_common.main" target="17" />
@@ -11,6 +41,18 @@
       <module name="cg_rpc_akka.cg_util.test" target="17" />
       <module name="cg_rpc_akka.main" target="17" />
       <module name="cg_rpc_akka.test" target="17" />
+      <module name="cg_util" target="17" />
+      <module name="cg_util.main" target="17" />
+      <module name="cg_util.test" target="17" />
+      <module name="com.cg.train.cg_cross_server" target="17" />
+      <module name="com.cg.train.cg_cross_server.main" target="17" />
+      <module name="com.cg.train.cg_cross_server.test" target="17" />
+      <module name="com.cg.train.cg_protocal" target="1.8" />
+      <module name="com.cg.train.cg_protocal.main" target="1.8" />
+      <module name="com.cg.train.cg_protocal.test" target="1.8" />
+      <module name="com.cg.train.cg_util" target="17" />
+      <module name="com.cg.train.cg_util.main" target="17" />
+      <module name="com.cg.train.cg_util.test" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

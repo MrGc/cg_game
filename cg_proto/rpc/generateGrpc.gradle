@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'com.google.protobuf' version '0.8.14'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+  main {
+    proto {
+      srcDir 'proto'
+    }
+
+    java {
+        srcDirs 'src/main/java', 'generated-sources/main/java'
+    }
+
+  }
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.11.0"
+    }
+    
+    plugins {
+        grpc {
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.29.0'
+        }
+    }
+    
+    //生成的grpc的message类的路径
+    generatedFilesBaseDir = "generated-sources"
+    
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {
+                //生成的grpc的service服务类的路径
+                outputSubDir = 'java'
+            }
+        }
+        ofSourceSet('main')
+    }
+}
+
+task clearGrpc() {
+    delete files("$buildDir/grpc")
+}

@@ -2,7 +2,40 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_base_server.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_base_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_base_server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_base_server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_base_server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_base_server.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_common.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-472733881/cg_common.cg_util.iml" filepath="$PROJECT_DIR$/.idea/modules/-472733881/cg_common.cg_util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-472733881/cg_common.cg_util.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-472733881/cg_common.cg_util.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-472733881/cg_common.cg_util.test.iml" filepath="$PROJECT_DIR$/.idea/modules/-472733881/cg_common.cg_util.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_cross_server.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_cross_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_cross_server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_cross_server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_cross_server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_cross_server.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/cg_game.iml" filepath="$PROJECT_DIR$/.idea/cg_game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_game_server.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_game_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1882229132/cg_game_server.cg_base_server.iml" filepath="$PROJECT_DIR$/.idea/modules/1882229132/cg_game_server.cg_base_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1882229132/cg_game_server.cg_base_server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1882229132/cg_game_server.cg_base_server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1882229132/cg_game_server.cg_base_server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/1882229132/cg_game_server.cg_base_server.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/449455088/cg_game_server.cg_common.iml" filepath="$PROJECT_DIR$/.idea/modules/449455088/cg_game_server.cg_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/449455088/cg_game_server.cg_common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/449455088/cg_game_server.cg_common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/449455088/cg_game_server.cg_common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/449455088/cg_game_server.cg_common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-472733881/cg_game_server.cg_util.iml" filepath="$PROJECT_DIR$/.idea/modules/-472733881/cg_game_server.cg_util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-472733881/cg_game_server.cg_util.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-472733881/cg_game_server.cg_util.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-472733881/cg_game_server.cg_util.test.iml" filepath="$PROJECT_DIR$/.idea/modules/-472733881/cg_game_server.cg_util.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_game_server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_game_server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_game_server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_game_server.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_login_server.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_login_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_login_server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_login_server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_login_server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_login_server.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_protocal.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_protocal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_protocal.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_protocal.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_protocal.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_protocal.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_util.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_util.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_util.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cg_util.test.iml" filepath="$PROJECT_DIR$/.idea/modules/cg_util.test.iml" />
     </modules>
   </component>
 </project>
